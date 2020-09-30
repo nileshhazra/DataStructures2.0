@@ -9,8 +9,11 @@ public class Expression {
         for (char ch: input.toCharArray()) {
             if (ch =='(')
                 stack.push(ch);
-            if (ch == ')')
+            if (ch == ')'){
+                if (stack.empty()) return false;
                 stack.pop();
+            }
+
             
         }
         return stack.empty();
